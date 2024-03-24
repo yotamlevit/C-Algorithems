@@ -48,6 +48,7 @@ int main()
     printf("Enter a string: ");
     scanf("%s", str);
 
+    printf("The given string is: %s \n The given char is: %c\n", str, c);
     // Run suffix the sum
     suffixResult = suffix(str, c);
 

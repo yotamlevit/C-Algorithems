@@ -47,13 +47,14 @@ int main()
     printf("Enter two integers: ");
 
     // Read two integers
-    scanf("%d %d", &num1, &num2);
+    scanf("%u %u", &num1, &num2);
 
+    printf("Num1: %u, num2: %u", &num1, &num2)
     // Calculate the sum
     sum = my_add(num1, num2);
 
     // Print the sum
-    printf("The binary addition: %d + %d =  %d\n", num1, num2, sum);
+    printf("The binary addition: %u + %u =  %u\n", num1, num2, sum);
 
     return 0;
 }
