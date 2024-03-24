@@ -1,3 +1,6 @@
 # Compiler files
-.dSYM
-.o
+*.dSYM
+*.o
+
+# Clion
+.idea
