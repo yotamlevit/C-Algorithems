@@ -5,19 +5,19 @@
 
 #define BYTE_SIZE 8
 
-/*
- * This function make a *simple* binary addition.
- * The binary addition is when you combine the 2 right
- * bits and checks if there is a carry.
- *
- * The function iterates over all the bits using a for loop.
- * To isolate the bit from the numbers function uses shifting.
- *
- * param a: (unsigned int) the first number for the addition
- * param b: (unsigned int) the second number for the addition
- *
- * @return: (unsigned int) The sum of the two numbers
- */
+//
+// This function make a *simple* binary addition.
+// The binary addition is when you combine the 2 right
+// bits and checks if there is a carry.
+//
+// The function iterates over all the bits using a for loop.
+// To isolate the bit from the numbers function uses shifting.
+//
+// param a: (unsigned int) the first number for the addition
+// param b: (unsigned int) the second number for the addition
+//
+// @return: (unsigned int) The sum of the two numbers
+//
 unsigned int my_add(unsigned int a, unsigned int b)
 {
     unsigned int sum = 0, carry = 0, result = 0, bitA, bitB, i;
