@@ -1,2 +1,5 @@
-Enter two integers (example: '11 22'): Num1: 305938, num2: 684920
+Enter two integers (example: '11 22'):305938 684920
+Num1: 305938, num2: 684920
+(In Binary) Num1: 1001010101100010010, num2: 10100111001101111000
 The binary addition: 305938 + 684920 =  990858
+(In Binary) The binary addition: 1001010101100010010 + 10100111001101111000 =  11110001111010001010
