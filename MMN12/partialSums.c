@@ -45,11 +45,11 @@ int* getArrayInput(int length)
     int* arr = (int*)malloc(sizeof(int) * length);
 
 
-    printf("Array length is %d\nEnter the first number: ", length);
+    printf("Array length is %d\n\nEnter the first number: ", length);
     scanf("%d", arr);
 
     for (i = 1; i < length; i++) {
-        printf("Enter the %d number: ", i+1);
+        printf("\nEnter the %d number: ", i+1);
         scanf("%d", arr + i);
     }
 
