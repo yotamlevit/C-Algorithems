@@ -11,3 +11,6 @@
 
 # Clion
 .idea
+
+# Cmake files
+cmake-build-debug
