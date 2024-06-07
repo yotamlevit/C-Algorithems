@@ -6,17 +6,25 @@
 #define MMN23_LIST_H
 
 
+typedef struct NodeData {
+    int numberCount;
+    char* fileName;
+} NodeData, * NodeDataPtr;
+
+/* Node Structure */
 typedef struct Node {
-    int data;
+    NodeDataPtr data;
     struct Node *next;
 } Node, * NodePtr;
 
-NodePtr createNode(int data);
-NodePtr insertNode(NodePtr node, int data);
-NodePtr insertEnd(NodePtr head, int data);
-NodePtr insertBegin(NodePtr head, int data);
-NodePtr findNode(NodePtr head, int data);
-NodePtr deleteNodeByData(NodePtr head, int data);
+
+/* List Functions */
+NodePtr createNode(NodeDataPtr data);
+NodePtr insertNode(NodePtr node, NodeDataPtr data);
+NodePtr insertEnd(NodePtr head, NodeDataPtr data);
+NodePtr insertBegin(NodePtr head, NodeDataPtr data);
+NodePtr findNode(NodePtr head, NodeDataPtr data);
+NodePtr deleteNodeByData(NodePtr head, NodeDataPtr data);
 NodePtr deleteNode(NodePtr node);
 void printList(NodePtr head);
 void freeList(NodePtr head);

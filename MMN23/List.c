@@ -15,7 +15,7 @@
  * @param data - the data to be stored in the new node
  * @return NodePtr - a pointer to the new node
  */
-NodePtr createNode(int data)
+NodePtr createNode(NodeDataPtr data)
 {
     NodePtr newNode = malloc(sizeof(Node));
     newNode->data = data;
@@ -31,7 +31,7 @@ NodePtr createNode(int data)
  * @param data  - the data to be stored in the new node
  * @return NodePtr - a pointer to the new node
  */
-NodePtr insertNode(NodePtr node, int data)
+NodePtr insertNode(NodePtr node, NodeDataPtr data)
 {
     NodePtr newNode = createNode(data);
     newNode->next = node->next;
@@ -46,7 +46,7 @@ NodePtr insertNode(NodePtr node, int data)
  * @param data  - the data to be stored in the new node
  * @return NodePtr - a pointer to the new node.
  */
-NodePtr insertEnd(NodePtr head, int data)
+NodePtr insertEnd(NodePtr head, NodeDataPtr data)
 {
     NodePtr newNode = createNode(data);
     if (head == NULL)
@@ -72,7 +72,7 @@ NodePtr insertEnd(NodePtr head, int data)
  * @param data  - the data to be stored in the new node
  * @return NodePtr - a pointer to the new node.
  */
-NodePtr insertBegin(NodePtr head, int data)
+NodePtr insertBegin(NodePtr head, NodeDataPtr data)
 {
     NodePtr newNode = createNode(data);
     newNode->next = head;
@@ -87,7 +87,7 @@ NodePtr insertBegin(NodePtr head, int data)
  * @param data - the data to be found
  * @return NodePtr - a pointer to the found node.
  */
-NodePtr findNode(NodePtr head, int data)
+NodePtr findNode(NodePtr head, NodeDataPtr data)
 {
     NodePtr temp = head;
     while (temp != NULL)
@@ -108,7 +108,7 @@ NodePtr findNode(NodePtr head, int data)
  * @param data - the data to be deleted
  * @return NodePtr - a pointer to the new head of the list.
  */
-NodePtr deleteNodeByData(NodePtr head, int data)
+NodePtr deleteNodeByData(NodePtr head, NodeDataPtr data)
 {
     NodePtr temp = head;
     if (temp->data == data)
