@@ -18,6 +18,9 @@ typedef struct Node {
 } Node, * NodePtr;
 
 
+/* Node Data Functions */
+NodeDataPtr createNodeData(int numberCount, char* fileName);
+
 /* List Functions */
 NodePtr createNode(NodeDataPtr data);
 NodePtr insertNode(NodePtr node, NodeDataPtr data);

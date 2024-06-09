@@ -10,6 +10,25 @@
 
 #include "List.h"
 
+
+
+/**
+ * THis function create a new NodeData with the given data.
+ *
+ * @param numberCount - the number of times the a number appear in the file
+ * @param fileName - the file name
+ * @return NodeDataPtr - a pointer to the new NodeData
+ */
+NodeDataPtr createNodeData(int numberCount, char* fileName)
+{
+    NodeDataPtr newNodeData = malloc(sizeof(NodeData));
+    newNodeData->numberCount = numberCount;
+    newNodeData->fileName = malloc(sizeof(char) * (strlen(fileName) + 1));
+    strcpy(newNodeData->fileName, fileName);
+    return newNodeData;
+}
+
+
 /**
  * Initializes a new node with the given data.
  *
@@ -63,7 +82,7 @@ NodePtr insertEnd(NodePtr head, NodeDataPtr data)
         }
         temp->next = newNode;
     }
-    return head;
+    return newNode;
 }
 
 /**
@@ -168,7 +187,9 @@ void printList(NodePtr head)
     NodePtr temp = head;
     while (temp != NULL)
     {
-        printf("%d ", temp->data);
+        printf("file %s - %d %s", temp->data->fileName, temp->data->numberCount, temp->data->numberCount == 1 ? "time" : "times");
+        if (temp->next != NULL)
+            printf(", ");
         temp = temp->next;
     }
 }
@@ -180,6 +201,7 @@ void freeList(NodePtr head)
     {
         NodePtr delNode = temp;
         temp = temp->next;
+        free(delNode->data);
         free(delNode);
     }
 }
