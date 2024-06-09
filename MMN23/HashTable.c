@@ -54,6 +54,18 @@ NodePtr insertHashTable(HashTablePtr table, int key, NodeDataPtr data)
 
 
 /**
+ * Checks if the bucket is empty
+ * @param table - a pointer to the hash table
+ * @param key - the number key
+ * @return int - 1 if the bucket is empty, 0 otherwise
+ */
+int isBucketEmpty(HashTablePtr table, int key)
+{
+    return table->buckets[key] == NULL;
+}
+
+
+/**
  * This function prints the hash table
  *
  * @param table - a pointer to the hash table
