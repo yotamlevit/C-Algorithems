@@ -3,5 +3,6 @@ project(MMN23 C)
 
 set(CMAKE_C_STANDARD 90)
 
-add_executable(MMN23 main.c
-        List.h)
+add_executable(MMN23 List.c
+        HashTable.c
+        hash.c)
