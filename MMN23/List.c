@@ -5,6 +5,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <strings.h>
 
 
 #include "List.h"
@@ -87,18 +88,29 @@ NodePtr insertBegin(NodePtr head, NodeDataPtr data)
  * @param data - the data to be found
  * @return NodePtr - a pointer to the found node.
  */
-NodePtr findNode(NodePtr head, NodeDataPtr data)
+NodePtr findNode(NodePtr head, char* fileName)
 {
     NodePtr temp = head;
     while (temp != NULL)
     {
-        if (temp->data == data)
+        if (strcmp(temp->data->fileName, fileName) == 0)
         {
             return temp;
         }
         temp = temp->next;
     }
     return NULL;
+}
+
+
+/**
+ * THis function updates the data of the given node.
+ * @param node - the node to be updated
+ * @param data - the new data
+ */
+void updateNode(NodePtr node, NodeDataPtr data)
+{
+    node->data = data;
 }
 
 /**
