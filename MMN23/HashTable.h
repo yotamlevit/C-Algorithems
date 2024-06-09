@@ -20,5 +20,4 @@ NodePtr findHashTable(HashTablePtr table, int key);
 void printHashTable(HashTablePtr table);
 void freeHashTable(HashTablePtr table);
 
-
 #endif

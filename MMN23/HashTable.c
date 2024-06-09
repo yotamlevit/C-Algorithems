@@ -10,6 +10,12 @@
 #include "List.h"
 
 
+/**
+ * Create a new hash table
+ *
+ * @param numOfBuckets - the number of buckets
+ * @return HashTablePtr - a pointer to the new hash table
+ */
 HashTablePtr createHashTable(int numOfBuckets)
 {
     HashTablePtr table = malloc(sizeof(struct HashTable));
@@ -18,25 +24,61 @@ HashTablePtr createHashTable(int numOfBuckets)
     return table;
 }
 
+
+/**
+ * Find the bucket in the hash table
+ *
+ * @param table - a pointer to the hash table
+ * @param key - the key for the bucket
+ * @return NodePtr - a pointer to the bucket
+ */
 NodePtr findHashTable(HashTablePtr table, int key)
 {
     return table->buckets[key];
 }
 
+
+/**
+ * Insert a file to the correspond bucket with the number key
+ *
+ * @param table - a pointer to the hash table
+ * @param key - the number key
+ * @param data - the file name and the number of occurences
+ * @return NodePtr - a pointer new Node
+ */
 NodePtr insertHashTable(HashTablePtr table, int key, NodeDataPtr data)
 {
-    return insertEnd(findHashTable(table, key) , data);
+    table->buckets[key] = insertEnd(findHashTable(table, key) , data);
+    return table->buckets[key];
 }
 
+
+/**
+ * This function prints the hash table
+ *
+ * @param table - a pointer to the hash table
+ */
 void printHashTable(HashTablePtr table)
 {
     int i;
     for (i = 0; i < table->numOfBuckets; i++)
     {
-        printList(table->buckets[i]);
+        if (!isBucketEmpty(table, i))
+        {
+            printf("%d appears in ", i);
+            printList(table->buckets[i]);
+            printf("\n");
+        }
+
     }
 }
 
+
+/**
+ * Free the hash table
+ *
+ * @param table - a pointer to the hash table
+ */
 void freeHashTable(HashTablePtr table)
 {
     int i;
