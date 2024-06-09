@@ -43,13 +43,16 @@ NodePtr findHashTable(HashTablePtr table, int key)
  *
  * @param table - a pointer to the hash table
  * @param key - the number key
- * @param data - the file name and the number of occurences
+ * @param data - the file name and the number of occurrence
  * @return NodePtr - a pointer new Node
  */
 NodePtr insertHashTable(HashTablePtr table, int key, NodeDataPtr data)
 {
-    table->buckets[key] = insertEnd(findHashTable(table, key) , data);
-    return table->buckets[key];
+    NodePtr node = insertEnd(findHashTable(table, key) , data);
+    if (table->buckets[key] == NULL)
+        table->buckets[key] = node;
+
+    return node;
 }
 
 
