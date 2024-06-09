@@ -57,7 +57,7 @@ int main(int argc, char *argv[]) {
     HashTablePtr hashTable;
 
     if (argc < 2) {
-        fprintf(stderr, "No files in inpu. To run the program execute: ./hash <file1> <file2> ... <fileN>\n");
+        fprintf(stderr, "No files in input. To run the program execute: ./hash <file1> <file2> ... <fileN>\n");
         return EXIT_FAILURE;
     }
 
