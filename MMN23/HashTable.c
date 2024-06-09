@@ -18,14 +18,14 @@ HashTablePtr createHashTable(int numOfBuckets)
     return table;
 }
 
-NodePtr search(HashTablePtr table, int key)
+NodePtr findHashTable(HashTablePtr table, int key)
 {
     return table->buckets[key];
 }
 
-void insert(HashTablePtr table, int key, NodeDataPtr value)
+NodePtr insertHashTable(HashTablePtr table, int key, NodeDataPtr data)
 {
-    insertEnd(search(table, key), value);
+    return insertEnd(findHashTable(table, key) , data);
 }
 
 void printHashTable(HashTablePtr table)

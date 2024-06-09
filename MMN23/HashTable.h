@@ -15,8 +15,8 @@ typedef struct HashTable {
 
 /* Hash Table Functions */
 HashTablePtr createHashTable(int numOfBuckets);
-void insert(HashTablePtr table, int key, NodeDataPtr value);
-NodePtr search(HashTablePtr table, int key);
+NodePtr insertHashTable(HashTablePtr table, int key, NodeDataPtr value);
+NodePtr findHashTable(HashTablePtr table, int key);
 void printHashTable(HashTablePtr table);
 void freeHashTable(HashTablePtr table);
 
