@@ -16,7 +16,6 @@
  * @return int - 1 on success, 0 on failure
  */
 int iterateFiles(HashTablePtr hashTable, char* fileNames[], const int numFiles) {
-    struct dirent* entry;
     int i, j, num;
     FILE* filePtr;
     NodePtr bucketLocationPtr[TOTAL_NUMBER_RANGE] = {NULL}; /* A Temp ptr to the buckets nodes for efficiency */
